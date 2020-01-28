@@ -20,7 +20,7 @@ auth() {
 tests() {
 
   if [ "$1" == "true" ]; then
-    invokeCmd "sfdx force:apex:test:run -r $2 -u $3"
+    invokeCmd "sfdx force:apex:test:run -l RunLocalTests -r $2 -u $3"
   fi
 
 }
