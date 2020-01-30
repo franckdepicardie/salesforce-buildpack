@@ -18,7 +18,7 @@ auth() {
 
 # <run_apex_tests> <apex_test_format> <alias>
 tests() {
-
+echo ">> EYH PATCH : invoking localtest"
   if [ "$1" == "true" ]; then
     invokeCmd "sfdx force:apex:test:run -l RunLocalTests -r $2 -u $3"
   fi
