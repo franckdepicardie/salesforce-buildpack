@@ -18,7 +18,7 @@ source "$vendorDir"/stdlib.sh
 
 : ${SFDX_BUILDPACK_DEBUG:="false"}
 
-header "Running release.sh"
+header "Running EYH release.sh"
 
 # Setup local paths
 log "Setting up paths ..."
