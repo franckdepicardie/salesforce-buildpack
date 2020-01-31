@@ -126,6 +126,34 @@ if [ "$STAGE" == "" ]; then
   # Create scratch org
   invokeCmd "sfdx force:org:create -s -f \"$scratch_org_def\" -a $TARGET_SCRATCH_ORG_ALIAS orgName=\"$TARGET_SCRATCH_ORG_NAME\""
 
+  echo ">> EYH : LPCR Portion injected in order to install specific managed package to scratch org..."
+  
+echo "Starting LPCR managed package installation..."
+
+echo "CPQ :"
+sfdx force:package:install -p 04t4N000000YT2ZQAW -a $TARGET_SCRATCH_ORG_ALIAS  -w 25 --noprompt
+
+echo "Billing :"
+sfdx force:package:install -p 04t0K00000179KyQAI -a $TARGET_SCRATCH_ORG_ALIAS  -w 25
+
+echo "FA :"
+sfdx force:package:install -p 04t0M000001SbQHQA0 -a $TARGET_SCRATCH_ORG_ALIAS  -w 25
+
+echo "Sparklane :"
+sfdx force:package:install -p 04t4I000000gNw8QAE -a $TARGET_SCRATCH_ORG_ALIAS  -w 25
+
+echo "Conga :"
+sfdx force:package:install -p 04tf2000002FhY6AAK -a $TARGET_SCRATCH_ORG_ALIAS  -w 25 --noprompt
+
+echo "Adobe Sign :"
+sfdx force:package:install -p 04t0g000000tOItAAM -a $TARGET_SCRATCH_ORG_ALIAS  -w 25
+
+echo "Prodly :"
+sfdx force:package:install -p 04t0H000000p4jZQAQ -a $TARGET_SCRATCH_ORG_ALIAS  -w 25 --noprompt
+
+echo "Finish installing all LPCR managed package"
+
+
   # Store creds for scratch org
   scratchSfdxAuthUrl=$(sfdx force:org:display --verbose -u $TARGET_SCRATCH_ORG_ALIAS --json | jq -r .result.sfdxAuthUrl)
   debug "scratchSfdxAuthUrl: $scratchSfdxAuthUrl"
