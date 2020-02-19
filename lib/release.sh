@@ -167,9 +167,9 @@ if [ ! "$STAGE" == "" ]; then
     CMD="sfdx force:apex:test:run -l RunLocalTests --resultformat human --codecoverage -u $TARGET_SCRATCH_ORG_ALIAS --wait 1000 --json | jq -r .result.summary.testRunId"
     debug "CMD: $CMD"
     SFDX_TEST_RUN_ID=$(eval $CMD)
-    debug "SFDX_TEST_RUN_ID: $SFDX_TEST_RUN_ID"
+    #debug "SFDX_TEST_RUN_ID: $SFDX_TEST_RUN_ID"
 
-    invokeCmd "sfdx force:apex:test:report --testrunid $SFDX_TEST_RUN_ID --resultformat human --codecoverage -u $TARGET_SCRATCH_ORG_ALIAS --wait 1000 --verbose"
+    #invokeCmd "sfdx force:apex:test:report --testrunid $SFDX_TEST_RUN_ID --resultformat human --codecoverage -u $TARGET_SCRATCH_ORG_ALIAS --wait 1000 --verbose"
 
   fi
 
