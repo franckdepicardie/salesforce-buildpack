@@ -61,6 +61,8 @@ debug "show_scratch_org_url: $show_scratch_org_url"
 debug "open-path: $open_path"
 debug "data-plans: $data_plans"
 
+log " -- EY ----------------------------------------------------- EY -- "
+log " -- # If review app or CI "
 # If review app or CI
 if [ "$STAGE" == "" ]; then
 
@@ -79,6 +81,8 @@ if [ "$STAGE" == "" ]; then
   auth "$scratchSfdxAuthUrlFile" "" s "$TARGET_SCRATCH_ORG_ALIAS"
 
   # Push source
+  log " -- EY ----------------------------------------------------- EY -- "
+  log " -- Push source -- "
   invokeCmd "sfdx force:source:push -u $TARGET_SCRATCH_ORG_ALIAS"
 
   # Show scratch org URL
@@ -91,6 +95,9 @@ if [ "$STAGE" == "" ]; then
   fi
 
 fi
+
+log " -- EY ----------------------------------------------------- EY -- "
+log " -- # If Development, Staging, or Prod -- "
 
 # If Development, Staging, or Prod
 if [ ! "$STAGE" == "" ]; then
@@ -157,6 +164,9 @@ if [ ! "$STAGE" == "" ]; then
     fi
 
   fi
+
+log " -- EY ----------------------------------------------------- EY -- "
+log " -- if run_apex_tests = true "
 
   if [ "$run_apex_tests" == "true" ];
   then
