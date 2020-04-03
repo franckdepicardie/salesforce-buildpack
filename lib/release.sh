@@ -199,7 +199,7 @@ log " -- if run_apex_tests = true "
     log "EYH Patch for running Local Test Only"
     
     #invokeCmd "sfdx force:apex:test:run -l RunLocalTests --resultformat human --codecoverage -u $TARGET_SCRATCH_ORG_ALIAS --wait 5000 --json" 
-    invokeCmd "sfdx force:apex:test:run -l RunLocalTests -u $TARGET_SCRATCH_ORG_ALIAS --verbose --resultformat human"
+    invokeCmd "sfdx force:apex:test:run -l RunLocalTests -u $TARGET_SCRATCH_ORG_ALIAS --verbose --resultformat human --wait 1000"
     #CMD="sfdx force:apex:test:run -l RunLocalTests --resultformat human --codecoverage -u $TARGET_SCRATCH_ORG_ALIAS --wait 1000 --json" 
     #| jq -r .result.summary.testRunId"
     #debug "CMD: $CMD"
@@ -207,6 +207,7 @@ log " -- if run_apex_tests = true "
     #debug "SFDX_TEST_RUN_ID: $SFDX_TEST_RUN_ID"
 
     #invokeCmd "sfdx force:apex:test:report --testrunid $SFDX_TEST_RUN_ID --resultformat human --codecoverage -u $TARGET_SCRATCH_ORG_ALIAS --wait 1000 --verbose"
+    log "End of running apex tests."
 
   fi
 
