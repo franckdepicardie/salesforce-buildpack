@@ -131,7 +131,7 @@ if [ "$STAGE" == "" ]; then
 echo "Starting LPCR managed package installation..."
 
 echo "CPQ :"
-sfdx force:package:install -p 04t4N000000YT2ZQAW -u $TARGET_SCRATCH_ORG_ALIAS  -w 25 --noprompt
+sfdx force:package:install -p 04t4N000000N5NCQA0 -u $TARGET_SCRATCH_ORG_ALIAS  -w 25 --noprompt
 
 echo "Billing :"
 sfdx force:package:install -p 04t0K000001E2LoQAK -u $TARGET_SCRATCH_ORG_ALIAS  -w 25
