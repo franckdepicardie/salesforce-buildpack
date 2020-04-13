@@ -134,7 +134,7 @@ echo "CPQ :"
 sfdx force:package:install -p 04t4N000000YT2ZQAW -u $TARGET_SCRATCH_ORG_ALIAS  -w 25 --noprompt
 
 echo "Billing :"
-sfdx force:package:install -p 04t0K00000179KyQAI -u $TARGET_SCRATCH_ORG_ALIAS  -w 25
+sfdx force:package:install -p 04t0K000001E2LoQAK -u $TARGET_SCRATCH_ORG_ALIAS  -w 25
 
 #echo "FA :"
 #sfdx force:package:install -p 04t0M000001SbQHQA0 -u $TARGET_SCRATCH_ORG_ALIAS  -w 25
