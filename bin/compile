@@ -139,11 +139,14 @@ sfdx force:package:install -p 04t0K000001E2LoQAK -u $TARGET_SCRATCH_ORG_ALIAS  -
 #echo "FA :"
 #sfdx force:package:install -p 04t0M000001SbQHQA0 -u $TARGET_SCRATCH_ORG_ALIAS  -w 25
 
-#echo "Sparklane :"
+echo "Sparklane :"
 sfdx force:package:install -p 04t4I000000gNw8QAE -u $TARGET_SCRATCH_ORG_ALIAS  -w 25
 
-#echo "Conga Composer:"
-#sfdx force:package:install -p 04tf2000002FhY6AAK -u $TARGET_SCRATCH_ORG_ALIAS  -w 25 --noprompt
+echo "CPQ - Conga Quotes :"
+sfdx force:package:install -p 04tf20000003UBeAAM -u $TARGET_SCRATCH_ORG_ALIAS  -w 25 --noprompt
+
+echo "CPQ - Conga Invoices :"
+sfdx force:package:install -p 04t2M000002mdK2QAI -u $TARGET_SCRATCH_ORG_ALIAS  -w 25 --noprompt
 
 echo "Adobe Sign :"
 sfdx force:package:install -p 04t0g000000tOItAAM -u $TARGET_SCRATCH_ORG_ALIAS  -w 25
