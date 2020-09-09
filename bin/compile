@@ -124,7 +124,7 @@ if [ "$STAGE" == "" ]; then
   auth "$devHubAuthFile" "$SFDX_DEV_HUB_AUTH_URL" d huborg
 
   # Create scratch org
-  invokeCmd "sfdx force:org:create -s -f \"$scratch_org_def\" -a $TARGET_SCRATCH_ORG_ALIAS orgName=\"$TARGET_SCRATCH_ORG_NAME\""
+  invokeCmd "sfdx force:org:create -s -f \"$scratch_org_def\"  -d 1 -a $TARGET_SCRATCH_ORG_ALIAS orgName=\"$TARGET_SCRATCH_ORG_NAME\""
 
   echo ">> EYH : LPCR Portion injected in order to install specific managed package to scratch org..."
   
