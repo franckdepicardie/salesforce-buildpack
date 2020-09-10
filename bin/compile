@@ -130,32 +130,37 @@ if [ "$STAGE" == "" ]; then
   
 echo "Starting LPCR managed package installation..."
 
+echo "Starting LPCR managed package installation..."
+
 echo "----------- CPQ : ( w = 40)"
-sfdx force:package:install -p 04t4N000000N5OyQAK -u $TARGET_SCRATCH_ORG_ALIAS  -w 90 --noprompt
+sfdx force:package:install -p 04t4N000000YTOgQAO -u $TARGET_SCRATCH_ORG_ALIAS  -w 90 --noprompt
 
 echo "----------- Billing :"
-sfdx force:package:install -p 04t0K000001E2LoQAK -u $TARGET_SCRATCH_ORG_ALIAS  -w 90
-
-#echo "FA :"
-#sfdx force:package:install -p 04t0M000001SbQHQA0 -u $TARGET_SCRATCH_ORG_ALIAS  -w 25
-
-echo "----------- Sparklane :"
-sfdx force:package:install -p 04t4I000000gNw8QAE -u $TARGET_SCRATCH_ORG_ALIAS  -w 90
-
-echo "----------- CPQ - Conga Quotes :"
-sfdx force:package:install -p 04tf20000003UBeAAM -u $TARGET_SCRATCH_ORG_ALIAS  -w 90 --noprompt
-
-echo "----------- Conga Invoices Generation :"
-sfdx force:package:install -p 04t2M000002mdK2QAI -u $TARGET_SCRATCH_ORG_ALIAS  -w 90 --noprompt
-
-echo "----------- Adobe Sign :"
-sfdx force:package:install -p 04t0g000000tOItAAM -u $TARGET_SCRATCH_ORG_ALIAS  -w 90
+sfdx force:package:install -p 04t0K000001E2m7QAC -u $TARGET_SCRATCH_ORG_ALIAS  -w 90
 
 echo "----------- Salesforce Billing Reporting Add-on :"
 sfdx force:package:install -p 04t4P000002icr9QAA -u $TARGET_SCRATCH_ORG_ALIAS  -w 90
 
-#echo "Prodly :"
+echo "----------- Sparklane :"
+sfdx force:package:install -p 04t4I000000gNw8QAE -u $TARGET_SCRATCH_ORG_ALIAS  -w 90
+
+echo "----------- Adobe Sign :"
+sfdx force:package:install -p 04t0g000000xaQxAAI -u $TARGET_SCRATCH_ORG_ALIAS  -w 90
+
+echo "----------- CPQ - Conga Quotes :"
+sfdx force:package:install -p 04t5w000004cdSvAAI -u $TARGET_SCRATCH_ORG_ALIAS  -w 90 --noprompt
+
+echo "----------- Conga Invoices Generation :"
+sfdx force:package:install -p 04t2M000002mdK2QAI -u $TARGET_SCRATCH_ORG_ALIAS  -w 90 --noprompt
+
+#echo "----------- FA :"
+#sfdx force:package:install -p 04t0M000001SbQHQA0 -u $TARGET_SCRATCH_ORG_ALIAS  -w 90
+
+#echo "----------- Prodly :"
 #sfdx force:package:install -p 04t0H000000p4jZQAQ -u $TARGET_SCRATCH_ORG_ALIAS  -w 25 --noprompt
+
+echo "----------- Advanced Approvals :"
+sfdx force:package:install -p 04t0L0000001ttYQAQ -u $TARGET_SCRATCH_ORG_ALIAS  -w 90 --noprompt
 
 echo "Finish installing all LPCR managed package"
 
